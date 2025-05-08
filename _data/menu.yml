@@ -4,9 +4,9 @@
 entries:
   - title: 简介
     entries:
-      - title: a simple personal structured output for something.
-      #- title: github repo
-        #url: https://github.com/riggraz/no-style-please
+      - title: a simple personal structured output for something or nothing.
+      - title: about
+        url: about
       #- title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
 
   - title: 全部内容
@@ -26,13 +26,19 @@ entries:
   #- title: rss
     #url: feed.xml
   
-  #- title: another list
-    #entries:
-      #- title: with subitems
-        #entries:
-          #- title: with subsubitems
-          #- title: example page
-            #url: about
+  - title: 人类补全计划
+    entries:
+      - title: os
+        entries:
+          - title: 并发
+          - title: 虚拟化
+          - title: 持久化
+      - title: csapp
+        entries:
+          - title: 实验
+          - title: csapp记录
+          
+            
   #- title: PRO TIP
     #entries:
       #- title: to edit this menu, edit _data/menu.yml file
