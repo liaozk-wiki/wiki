@@ -93,8 +93,7 @@ public class Foo {
 
 
 
-<img src="./assets/image-20250507144616385.png" alt="image-20250507144616385" style="zoom:50%;" />
-
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250507144616385.png" alt="image-20250507144616385" style="zoom:50%;" />
 
 
 4.Method Information
