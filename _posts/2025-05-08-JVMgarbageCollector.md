@@ -79,13 +79,13 @@ Reference Queue
 
 2.Mark-Compact标记并整理
 
-<img src="./assets/image-20250507164953553.png" alt="image-20250507164953553" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250507164953553.png" alt="image-20250507164953553" style="zoom:33%;" />
 
 整理耗时，适合垃圾少
 
 3.Mark-Copy
 
-<img src="./assets/image-20250507165058672.png" alt="image-20250507165058672" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250507165058672.png" alt="image-20250507165058672" style="zoom:33%;" />
 
 需要额外空间，适合垃圾多
 
