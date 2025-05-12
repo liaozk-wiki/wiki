@@ -3,16 +3,14 @@ layout: page
 title: About
 ---
 
-    我看了2小时的vue，
-    quick start 的15个小案例都没做完，
-    就放弃了...
-    
-    然后花了一天，
-    先是弄了下hexo，
-    准备部署到github
+share a muisc for all
 
-    既然github pages 支持jekyll，
-    为什么不用最简单的呢？
-    于是这个网站就诞生了
 
-    舒服是非常重要的，否则你很快就会放弃。--jyy
+<iframe 
+  src="//player.bilibili.com/player.html?isOutside=true&aid=247027840&bvid=BV1Yv411h71J&cid=308696368&p=1&autoplay=0&danmaku=0&start=80&t=1m20s&platform=html5"
+  width="100%" 
+  height="450px"
+  frameborder="0" 
+  scrolling="no" 
+  allowfullscreen>
+</iframe>
