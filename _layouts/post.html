@@ -27,12 +27,18 @@ layout: default
         easing: 'easeOutQuint',
     });
 
-    // 添加自定义滚动行为
-    document.querySelectorAll('.scroll-nav__link, .scroll-nav__sub-link').forEach(link => {
+    // 强制覆盖默认滚动行为
+    document.querySelectorAll('.scroll-nav a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'auto' });
+            const targetId = link.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'instant'
+                });
+            }
         });
     });
 </script>
