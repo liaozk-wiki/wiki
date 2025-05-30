@@ -21,8 +21,8 @@ layout: default
 <script>
     const ct = document.querySelector('.post-content');  //".post-content"指向文章内容所在的div，需根据实际情况修改
     scrollnav.init(ct, { 
-        debug: true,
-        easingStyle: 'linear',
+        debug: false,
+        easingStyle: 'easeOutQuad',
         sections: 'h1',
         subSections: 'h2',
     });
