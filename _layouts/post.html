@@ -24,7 +24,14 @@ layout: default
         debug: false,
         sections: 'h1',
         subSections: 'h2',
-        duration: 0,
-        easingStyle: 'easeInOutQuint',
+    });
+
+    // 添加自定义滚动行为
+    document.querySelectorAll('.scroll-nav__link, .scroll-nav__sub-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'auto' });
+        });
     });
 </script>
