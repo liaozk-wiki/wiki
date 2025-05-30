@@ -51,10 +51,10 @@ li { margin: 0.4rem 0; }
 
 .w {
   max-width: 640px;
-  margin-left: 240px;  // 导航栏宽度200px + 左侧间距20px + 内容间距20px
-  margin-right: auto;  // 右侧自动居中
+  margin-left: calc(50% - 200px); /* 总宽度一半 - 偏移量 */
+  margin-right: auto;
   padding: 4rem 2rem;
-  transition: margin 0.3s; // 添加过渡效果
+  transition: margin 0.3s;
 }
 
 hr {
