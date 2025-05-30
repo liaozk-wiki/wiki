@@ -97,6 +97,24 @@ img {
   margin: 0 auto;
 }
 
+article {
+  margin-left: 240px; // 导航栏宽度200px + 左侧间距20px
+  max-width: 640px;   // 保持原有最大宽度
+  margin-right: auto; // 右侧自动居中
+  padding: 0 2rem;    // 保持原有内边距
+  transition: margin 0.3s;
+}
+
+@media (max-width: 768px) {
+  .scroll-nav {
+    display: none;
+  }
+  article {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
 .scroll-nav {
   position: fixed;
   left: 20px;
