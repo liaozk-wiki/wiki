@@ -18,10 +18,11 @@ entries:
 
   - title: 分类
     post_list:
+      limit: 0
       category: 计算机
       show_more: true
-      show_more_text: See more posts...
-      show_more_url: example2-archive.html
+      show_more_text: Computer
+      show_more_url: computer.html
 
   #- title: rss
     #url: feed.xml
