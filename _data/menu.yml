@@ -7,7 +7,7 @@ entries:
       - title: a simple personal structured output for something or nothing.
       - title: about
         url: about
-      #- title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
+      - title: contact me ：zikai.liao@outlook.com
 
   - title: 全部内容
     post_list:
@@ -18,7 +18,7 @@ entries:
 
   - title: 分类
     post_list:
-      category: example2
+      category: 计算机
       show_more: true
       show_more_text: See more posts...
       show_more_url: example2-archive.html
@@ -34,7 +34,7 @@ entries:
             url: man_complete/os/操作系统_实验记录
           - title: 并发
             url: man_complete/os/操作系统_并发
-          - title: 操作系统_虚拟化
+          - title: 虚拟化
             url: man_complete/os/操作系统_虚拟化
           - title: 持久化
             url: man_complete/os/操作系统_持久化
@@ -42,7 +42,18 @@ entries:
         entries:
           - title: 实验
           - title: csapp记录
-          
+      - title: cs61a
+        entries:
+          - title: 实验
+          - title: csapp记录
+      - title: 算法4th
+        entries:
+          - title: 实验
+          - title: csapp记录
+      - title: cs61b-梦开始的地方
+        entries:
+          - title: 实验
+          - title: csapp记录    
             
   #- title: PRO TIP
     #entries:
