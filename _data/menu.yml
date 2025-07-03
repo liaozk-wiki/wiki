@@ -30,9 +30,14 @@ entries:
     entries:
       - title: os
         entries:
+          - title: 实验记录
+            url: _man_completion/os/操作系统_实验记录
           - title: 并发
+            url: _man_completion/os/操作系统_并发
           - title: 虚拟化
+            url: _man_completion/os/操作系统_虚拟化
           - title: 持久化
+            url: _man_completion/os/操作系统_持久化
       - title: csapp
         entries:
           - title: 实验
