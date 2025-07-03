@@ -7,7 +7,7 @@ entries:
       - title: a simple personal structured output for something or nothing.
       - title: about
         url: about
-      - title: contact me ：zikai.liao@outlook.com
+      - title: contact：zikai.liao@outlook.com
 
   - title: 全部内容
     post_list:
@@ -17,14 +17,9 @@ entries:
       show_more_url: archive.html
 
   - title: 分类
-    post_list:
-      limit: 0
-      category: 计算机
-      show_more: true
-      show_more_text: Computer
-      show_more_url: computer.html
-      show_more_text: About Computer
-      show_more_url: computer.html
+    entries:
+      - title: Computer...
+        url: Computer
 
   #- title: rss
     #url: feed.xml
