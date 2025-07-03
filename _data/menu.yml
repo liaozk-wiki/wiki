@@ -23,6 +23,8 @@ entries:
       show_more: true
       show_more_text: Computer
       show_more_url: computer.html
+      show_more_text: About Computer
+      show_more_url: computer.html
 
   #- title: rss
     #url: feed.xml
