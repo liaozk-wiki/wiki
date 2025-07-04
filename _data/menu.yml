@@ -11,15 +11,19 @@ entries:
 
   - title: 全部内容
     post_list:
-      limit: 5
+      limit: 3
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
 
   - title: 分类
     entries:
-      - title: Computer...
-        url: Computer
+      - title: Reading Notes‌..
+        url: category/Reading
+      - title: Random Thoughts‌..
+        url: category/Thoughts
+      - title: About Computer...
+        url: category/Computer
 
   #- title: rss
     #url: feed.xml
