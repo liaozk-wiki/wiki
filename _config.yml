@@ -38,5 +38,7 @@ jektex:
 
 markdown: kramdown
 kramdown:
-  hard_wrap: true  # 保留原始换行符
+  hard_wrap: true
+  input: GFM  # 启用GitHub风格解析
+  syntax_highlighter: rouge  # 避免冲突‌
 
