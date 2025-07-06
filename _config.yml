@@ -36,9 +36,4 @@ jektex:
     - ["\\Q", "\\mathbb{Q}"]
     - ["\\C", "\\mathbb{C}"]
 
-markdown: kramdown
-kramdown:
-  hard_wrap: true
-  input: GFM  # 启用GitHub风格解析
-  syntax_highlighter: rouge  # 避免冲突‌
 
