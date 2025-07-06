@@ -35,3 +35,8 @@ jektex:
   macros:
     - ["\\Q", "\\mathbb{Q}"]
     - ["\\C", "\\mathbb{C}"]
+
+markdown: kramdown
+kramdown:
+  hard_wrap: true  # 保留原始换行符
+
