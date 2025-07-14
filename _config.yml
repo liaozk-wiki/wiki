@@ -36,5 +36,3 @@ jektex:
     - ["\\Q", "\\mathbb{Q}"]
     - ["\\C", "\\mathbb{C}"]
 
-kramdown:
-  hard_wrap: true
