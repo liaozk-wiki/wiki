@@ -45,8 +45,10 @@ entries:
           - title: csapp记录
       - title: cs61a
         entries:
-          - title: 实验
-          - title: csapp记录
+          - title: 总结
+            url: man_complete/cs61a/cs61a总结
+          - title: cs61a记录
+            url: man_complete/cs61a/cs61a
       - title: 算法4th
         entries:
           - title: 实验
