@@ -5,21 +5,22 @@ title: cs61a
 
 
 
-• Whatever the assignment, start now. 
-• Yes, that’s really all there is. 
-• Don’t fight the problem.
-• Practice is important. Don’t just assume you can do it; do it!
+- Whatever the assignment, start now. 
+- Yes, that’s really all there is. 
+- Don’t fight the problem.
+- Practice is important. Don’t just assume you can do it; do it!
+<br>
 <br>
 programming means a great deal more, including  
-
+<br>
 1. Design of what programs do. 
 2. Analysis of the performance of programs. 
 3. Confirmation of their correct operation. 
 4. Management of their complexity.
-
-
+<br>
+<br>
 编程就是对复杂性的管理
-
+<br>
 # other
 <br>
 A key principle in software development is that it is generally better for code to crash than produce an incorrect result
@@ -30,7 +31,8 @@ python debug：
 2. print & boolean print
 3. assert
 
-
+<br>
+<br>
 
 装饰器模式
 ![image-20240303135226651](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303135226651.png)
@@ -117,23 +119,24 @@ We say that an object is **mutable** if its state can change as code is executed
 3. Apply the value of the operator to the evaluated operands.
 
 <br>
+<br>
 
 # Name&Value
 三个基本的组成：
 -  **Values** are data we want to manipulate and in particular
 - **Functions** are values that perform computations on values
 -  **Expressions** denote computations that produce values.
-
+<br>
 值，函数也是值，函数的内容=表达式，表达式可以理解为函数这个值的具体内容
 在状态机模型中：
-
+<br>
 1. 一个初始状态
 2. 一些控制状态流转的指令
-
+<br>
 从这个角度来理解编程语言：值（定义初始状态）+ 表达式（定义状态流转）这两个就是基础，在python中我们进一步抽象了函数的概念，函数是特殊的值，封装了表达式，可以用来对其他值进行计算。
-
-
-
+<br>
+<br>
+<br>
 函数定义：
 
 ```python
@@ -179,7 +182,7 @@ To evaluate a function call:
 
 1. Evaluate the operator, and then the operands (from left to right).
 2. Apply the operator to the operands (the values of the operands).
-
+<br>
 表达式，作为函数这个value的具体内容，可以抽象为：Operator(operand1,operand2)，即操作符&操作数。
 <br>
 对表达式的解析是一个递归的调用过程：
@@ -201,8 +204,8 @@ Python如何定义value呢？(python如何定义初始状态呢)
 2. function definitions;def abc(x,y):return x+y;def本身就是一个赋值，将function a(x,y)... 赋值给a ,a就代表着这个函数
 3. parameter passing to functions
 
-
-
+<br>
+<br>
 <br>
 
 ```python
@@ -242,6 +245,7 @@ Remember that programs are simply a set of statements, or instructions
 
 <br>
 <br>
+<br>
 
 # Control
 <br>
@@ -267,6 +271,7 @@ name:abc value: function abc(x,y)[parent = global]
 ```
 <br>
 前面介绍的expressions（操作符&操作数）是按顺序求值的（evaluate），control expression则是控制 操作数的求值顺序的。
+<br>
 <br>
 语句（statement），与表达式不同，他们只 do 不求值，no value，通常被单独用来副作用。control statement 则是用来控制 do 的执行顺序。
 <br>
@@ -314,6 +319,7 @@ false and (condition)
 后面的condition 不会计算，like java
 ````
 <br>
+
 ```python
 """
 python 三元表达式
@@ -325,8 +331,9 @@ def wears_jacket(temp, raining):
 if...  if...\if...elif...else...\if...return if... return 
 """
 ```
-<br>
 
+<br>
+<br>
 <br>
 
 # Higher Order Function
@@ -377,11 +384,19 @@ h(pi / 4)
 ````
 <br>
 ![image-20231123143619210](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20231123143619210.png)
+
 <br>
+
 thunks ：指针碰到栈底的声音😂
 <br>
-这里的不可能，是因为传递expression给函数时，就已经会预先求值了，除非通过thunks这种形式的函数，将表达式包装进函数里面，从而实现，只调用其中一个而不是所有。作为函数的operand 其必须最终是一个值（neither value or function，not statement ）
+
 <br>
+
+这里的不可能，是因为传递expression给函数时，就已经会预先求值了，除非通过thunks这种形式的函数，将表达式包装进函数里面，从而实现，只调用其中一个而不是所有。作为函数的operand 其必须最终是一个值（neither value or function，not statement ）
+
+<br>
+<br>
+
 
 ```python
 """
@@ -695,6 +710,8 @@ def three_memory(n):
     return f(None, None, n)
 ```
 <br>
+<br>
+<br>
 
 # Recursion
 <br>
@@ -725,18 +742,21 @@ print sums(1)(3)(5)
 <br>
 语义说明则由两部分构成
 <br>
-​		1.前置条件：对调用者的约束
-​		2.后置条件：方法实现者的保证（这个方法会返回给你什么)
+<br>
+​		1. 前置条件：对调用者的约束
+​		2. 后置条件：方法实现者的保证（这个方法会返回给你什么)
 <br>
 进一步分解则是：
-1.调用者只考虑，提供参数&使用结果，不关心方法实现
-2.方法实现者，只考虑如何compute result，不关心参数的提供&结果的使用
-3.从客户端的角度，signature 就是一系列可能计算出结果的方法的抽象概念。用了ta就能得到想要的结果。
+1. 调用者只考虑，提供参数&使用结果，不关心方法实现
+2. 方法实现者，只考虑如何compute result，不关心参数的提供&结果的使用
+3. 从客户端的角度，signature 就是一系列可能计算出结果的方法的抽象概念。用了ta就能得到想要的结果。
 <br>
 Programming is largely about choosing abstractions that lead to clear, fast, and maintainable programs
+<br>
 Programming = 选择抽象概念，实现 整洁 & 快速 & 可维护 的程序。
 <br>
 线性递归 与 尾递归
+<br>
 <br>
 
 ```python
@@ -807,6 +827,7 @@ def sum_squares(n):
 <br>
 初步看到这个问题时，压根不知道如何求解，而答案竟是如此的简单...
 <br>
+
 ```python
 def num_partitions(n, k):
   """
@@ -823,42 +844,67 @@ def num_partitions(n, k):
 Example:
 <br>
 num_partitions(6, 3):
+<br>
 6
+<br>
 = 3+3
+<br>
 =3+2+1
+<br>
 =3+1+1+1
+<br>
 =2+2+2
+<br>
 =2+2+1+1
+<br>
 =2+1+1+1+1
+<br>
 =1+1+1+1+1+1
+<br>
 总共7种，answer = 7；
 <br>
 分成两个递归，一个是k逐渐变小：
+<br>
 3+3
+<br>
 2+2+2
+<br>
 1+1+1+1+1+1
 <br>
 一个是k不变的情况下细化内部成员：
+<br>
 3+3
+<br>
 3+2+1
+<br>
 3+1+1+1
+<br>
 即使到现在，依然觉得解题答案十分巧妙，模拟了几次运行，依然不得要领...😭
 <br>
 Now  more interesting recursion:
+<br>
 Tower of Hanoi:
 <br>
 一碟盘子，三根柱子，按照由大到小整齐码在一根柱子上，现在需要将其移动到另外一根柱子。
+<br>
 要求：每次只能移动一个 & 堆叠必须满足大的在下，小的在上。
 <br>
 solution：
-1.现实中模拟操作
-2.将操作书写成步骤
+1. 现实中模拟操作
+2. 将操作书写成步骤
+
 <br>
+
 一个盘子：直接将其移动到目标盘子。
+<br>
 多个盘子：
-​	将k-1个盘子移动到空余柱子。
+<br>
+​	将k-1个盘子移动到空余柱子
+<br>。
 ​	将最大的那个移动到目标柱子。
+<br>
 ​	将k-1个盘子从空余柱子移动到目标柱子。
+<br>
 ？ 为什么不是现实中的一个盘子一个盘子移动，而是整体k-1 个盘子呢
 <br>
 def hanoi_tower(n, target)，因为方法的语义便是将n个盘子移动到目标柱子
@@ -883,7 +929,8 @@ def hanoi_tower(n, start, end):
 <br>
 4.我在看过课程后，写出来了，但我依然无法在大脑中直接构建出每一步骤。so try to simulate operation 
 <br>
- Removing Digits：
+Removing Digits：
+<br>
 从一个数字中移除指定的数字
 
 ```python
@@ -935,10 +982,11 @@ def make_repeater(func, n):
     return f
 ````
 <br>
+
 ```python
 def cycle(f1, f2, f3):
     """Returns a function that is itself a higher-order function.
-<br>
+
     >>> def add1(x):
     ...     return x + 1
     >>> def times2(x):
@@ -975,6 +1023,7 @@ def cycle(f1, f2, f3):
     return func1
 ```
 <br>
+
 ````python
 def cs61nay(combiner, n):
     """ Return a function that takes n arguments,
@@ -1005,9 +1054,11 @@ def cs61nay(combiner, n):
 <br>
 这三道练习题非常经典，除了第一个外，剩余两个都没有做出来...
 <br>
-1.重复调用func n次
-2.总共调用n次，但却是 f1,f2,f3循环调用
-3.我们无法构建类似f(f(f(x))) 这样的形式，直观的combine(x, nay(combine, n-1)()...),但n ！=1 时其返回的是一个函数，不是value。n控制次数，但每一次实际的combine 这写在外面。
+1. 重复调用func n次
+2. 总共调用n次，但却是 f1,f2,f3循环调用
+3. 我们无法构建类似f(f(f(x))) 这样的形式，直观的combine(x, nay(combine, n-1)()...),但n ！=1 时其返回的是一个函数，不是value。n控制次数，但每一次实际的combine 这写在外面。
+<br>
+<br>
 <br>
 
 ##  Abusing the Call Stack 
@@ -1061,11 +1112,13 @@ def make_anonymous_factorial():
 <br>
 A recursive function is a function that calls itself in its body, either directly or indirectly. Recursive functions have three important components:
 <br>
+
 1. Base case(s), the simplest possible form of the problem you're trying to solve.
 2. Recursive case(s), where the function calls itself with a *simpler argument* as part of the computation.
 3. Using the recursive calls to solve the full problem.
 
-
+<br>
+<br>
 
 写出有效递归的一些tips：
 <br>
@@ -1079,13 +1132,17 @@ A recursive function is a function that calls itself in its body, either directl
 
 书写递归的三个普遍步骤：
 <br>
-  1.Figure out your base case
-  2.Make a recursive call with a simpler argument
-  3.Use your recursive call to solve the full problem
+
+  1. Figure out your base case
+  2. Make a recursive call with a simpler argument
+  3. Use your recursive call to solve the full problem
   <br>
   Tree Recursion
-  树递归，就是递归方法调用自己超过一次。
   <br>
+  树递归，就是递归方法调用自己超过一次。
+<br>
+<br>
+<br>
 
 ## 一个挑战：
 <br>
@@ -1142,11 +1199,15 @@ balabala...
 <br>
 上面这个，进入pair_func时，因为赋值语句，会直接创建本地变量 a = None & b = None，如果此时 which == 0，返回未赋值的 a 会直接报错。
 <br>
+<br>
 fix：声明 a & b 是 nonlocal 的
 <br>
+<br>
+
 ![image-20240303143803427](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303143803427.png)
 <br>
 上面的例子，展示了如何用一些基础特性，构建复杂特性，但实际中python 提供了一些容器，作为数据的数据。
+<br>
 <br>
 now start intercept sequences：
 <br>
@@ -1158,26 +1219,37 @@ list于tuple的主要区别：tuple 不可变，list可变！
 <br>
 字符串：sequence of string
 <br>
-1.单/双 引号
-2.字符串中可以直接使用编码 \n ...
-3.r字符串 表示原始字符串，无需转义等
+
+1. 单/双 引号
+2. 字符串中可以直接使用编码 \n ...
+3. r字符串 表示原始字符串，无需转义等
 <br>
+<br>
+
 ![image-20240303150305490](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303150305490.png)
+<br>
 <br>
 sequence 的选择与切片
 <br>
+
 ![image-20240303151133406](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303151133406.png)
+<br>
 <br>
 sequence 的组合与转换
 <br>
+
 ![image-20240303151315435](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303151315435.png)
+<br>
 <br>
 sequence的迭代：循环
 <br>
+
 ![image-20240303151452170](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303151452170.png)
+<br>
 <br>
 sequence 的一些其他语法
 <br>
+
 ![image-20240303160546509](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303160546509.png)
 <br>
 
@@ -1191,6 +1263,8 @@ def match(a,b):
 	return len([0 for x in a for y in b if x == y]);
 ```
 <br>
+<br>
+<br>
 
 # Data Abstraction
 <br>
@@ -1198,26 +1272,32 @@ ADT: abstract data type
 <br>
 API:
 <br>
-1.60s 我们把程序理解为一系列的过程拆解
-2.70s 则强调哪些被方法操作的数据的流转
-3.adt 代表了一些data 以及在这些data上的操作
-4.我们通常在一堆adt里面管理程序
-5.对于每一个type 我们定义api 来描述可以进行哪些操作
-6.通常api 则是由function 组成的
-7.The collection of specifications (syntactic and semantic) of these functions constitutes a specification of the type.
-8.之所以是抽象的，因为client 不需要知道adt的细节。知道adt的specification就行
+
+1. 60s 我们把程序理解为一系列的过程拆解
+2. 70s 则强调哪些被方法操作的数据的流转
+3. adt 代表了一些data 以及在这些data上的操作
+4. 我们通常在一堆adt里面管理程序
+5. 对于每一个type 我们定义api 来描述可以进行哪些操作
+6. 通常api 则是由function 组成的
+7. The collection of specifications (syntactic and semantic) of these functions constitutes a specification of the type.
+8. 之所以是抽象的，因为client 不需要知道adt的细节。知道adt的specification就行
 <br>
+<br>
+
 ![image-20240303171445179](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240303171445179.png)
 <br>
 对于每个adt的api，一般分类三类（构造&get&set)：
 <br>
-1.constructors
-2.accessors
-3.mutators
+
+1. constructors
+2. accessors
+3. mutators
 <br>
 Dictionaries, Matrices, and Trees
 <br>
+<br>
 Dict:可变的mapping of key-value pairs
+<br>
 <br>
 
 ```python
@@ -1227,17 +1307,23 @@ name = {
 }
 ```
 <br>
+<br>
 key：必须是不可变的类型
+<br>
 value：可以是任何类型
 <br>
 Matrices:
+<br>
 矩阵：多种方式实现...
 <br>
 Trees:
 <br>
+<br>
+<br>
 
 # Iterator
 <br>
+
 ````python
 l = [a,b,c]
 itor = iter(l)
@@ -1249,6 +1335,7 @@ l.__iter__()
 <br>
 迭代器会跟踪元素，但只会跟踪到创建时的长度。
 <br>
+
 ![image-20240307011249339](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240307011249339.png)
 <br>
 # Generator
@@ -1263,8 +1350,12 @@ use yield instand return
 <br>
 递归生成树：
 <br>
+<br>
+<br>
+
 # Object&Class
 <br>
+
 ```python
 class Product:
   
@@ -1291,8 +1382,12 @@ class Product:
   Product.incr_inventory(product_a, 2)
 ```
 <br>
+<br>
+<br>
+
 # Inheritance + Composition
 <br>
+
 ````python
 class Animal:
   def __init__(self, name, age = 0):
@@ -1313,20 +1408,26 @@ class Elephant(Animal):
 ````
 <br>
 继承
+<br>
 重写
 <br>
 调用父类方法
+<br>
 调用父类构造器
 <br>
 python 也是所有类继承object
+<br>
 
 ````python
 aclass.__class__.__bases__
 ````
 <br>
+<br>
+<br>
 
 # Object
 <br>
+
 ````python
 __str__  #返回对象的字符串形式 ， 人类可读
 
@@ -1344,6 +1445,7 @@ hasattr()
 #python . 实际调用的都是 dunder方法
 ````
 <br>
+
 ![image-20240314002612499](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240314002612499.png)
 <br>
 # Recursive Object
@@ -1352,6 +1454,7 @@ Tree & Linked List
 <br>
 # Complex
 <br>
+
 ![image-20240316094949618](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240316094949618.png)
 <br>
 抛开各种具体的环境 & 执行细节，为了更一般的测量：strategic vagueness. 
@@ -1362,16 +1465,22 @@ Tree & Linked List
 <br>
 从精确的时间 -->  函数是如何增长的
 <br>
+<br>
 Sometimes, results for “small” values are not indicative
 <br>
 we tend to ask about **asymptotic** behavior of programs: as size of input goes to infinity
 <br>
+
 ![image-20240316103351424](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240316103351424.png)
+<br>
 <br>
 big O： f(x) <= k*O(g(x))
 <br>
 big theta: k1*(g(x)) < f(x) < k2 * (g(x))
 <br>
+<br>
+<br>
+
 # Recursion & Memoization
 <br>
 非常困，至少假努力一下，乱七八糟的过完今天计划过的课程...
@@ -1384,7 +1493,11 @@ big theta: k1*(g(x)) < f(x) < k2 * (g(x))
 <br>
 ![image-20240316114821852](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240316114821852.png)
 <br>
+<br>
+<br>
+
 # Generics
+<br>
 <br>
 格式化字符串输出，just 百度吧
 <br>
@@ -1408,24 +1521,34 @@ join 函数
 <br>
 sorted & sort()
 <br>
+<br>
+<br>
 Record：
 <br>
 20240324，晴，差10分中午13点。
 <br>
 最近突然变得比较糟糕了，作业不想做，也没什么状态去做，cs61a也有点不想看了，似乎完全没法推进下去。今天甚至都想在家打一天手游，还好自己坚持来了，有必要对过去的那些暂时放一下，开始scheme。感觉很难放松，睡眠也总是不好，不能有效的休息，进一步导致精力不足，恶性循环了。也许我做不到100%，甚至80%都做不到。god 60万岁吧，调整状态，休息甚至是一门非常重要的学问。start 吧，三节课，以及配套的练习，今天的target！！！
 <br>
+<br>
+<br>
+
 # Scheme
+<br>
 <br>
 ​		我们将用schem来演示应用级程序的 范式计算（没有副作用，没有赋值，全是非破环性的操作），因此也不会使用赋值&可变数据结构，没有副作用，将会使得编程更加简单，同时副作用与可变性，让并发编程变得更加的困难！
 <br>
 let‘s start：
 <br>
+<br>
+<br>
+
 ## scheme 基本数据结构
 <br>
 学习任何一门语言都必须了解这门语言操作的值是什么
 <br>
 We divide Scheme data into **atoms** and **pairs**.
 <br>
+
 ![image-20240324131310721](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324131310721.png)
 <br>
 schem 应用程序本身就是其操作值。pair：pair of pair
@@ -1436,41 +1559,62 @@ quote ‘  表示引用（这是一个字符串），而不是求值
 <br>
 if/and/or
 <br>
+
 ![image-20240324135417942](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324135417942.png)
+<br>
 <br>
 cond
 <br>
+
 ![image-20240324142432732](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324142432732.png)
+<br>
 <br>
 define/lambda
 <br>
+
 ![image-20240324142602775](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324142602775.png)
+<br>
 <br>
 “ + - * / quotient”
 <br>
+
 ![image-20240324142835123](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324142835123.png)
+<br>
 <br>
 cons car cdr
 <br>
+
 ![image-20240324142918483](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324142918483.png)
+<br>
 <br>
 = / eq / eqv / equal
 <br>
+
 ![image-20240324143314996](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324143314996.png)
+<br>
 <br>
 let
 <br>
+
 ![image-20240324143756046](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324143756046.png)
+<br>
 <br>
 scheme中的递归
 <br>
+
 ![image-20240324144226897](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240324144226897.png)
+<br>
 <br>
 python 中每一次调用return 都需要进入下一个调用，直到base case 再层层返回最终求值（占用额外的stack空间），但再scheme中则会每次翻译下次调用的表达式，当翻译到最后一个时，求完值，答案也就出来了，不需要再层层返回。
 <br>
+<br>
 always go easy stuff frist，so that you can get your brownie point，don‘t be embarrassed that you are saying some obvious，because is has to be said after all
 <br>
+<br>
+<br>
+
 # Calculator
+<br>
 <br>
 机器语言
 <br>
@@ -1492,9 +1636,11 @@ answered：no
 <br>
 ![image-20240330224024603](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240330224024603.png)
 <br>
+<br>
 什么是证明：
 <br>
 如果我们能通过给符号添加足够多的限制来获取我们想要的属性，那么我们就可以通过语法操作来表示大量杂乱的意义。（通过对有限定理的操作，我们可以完成对大量具体事务的抽象表达）
+<br>
 <br>
 公理：前置约束
 <br>
@@ -1504,9 +1650,13 @@ answered：no
 <br>
 三段式
 <br>
+<br>
+
 ![image-20240331000616784](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331000616784.png)
 <br>
+
 ![image-20240331001709926](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331001709926.png)
+<br>
 <br>
 可以通过编写一个程序来判断，哪些是公理，哪些是模板的实例，即通过给定的公理等可以穷举出所有可以证明的命题（大英博物馆算法？）
 <br>
@@ -1514,39 +1664,60 @@ answered：no
 <br>
 失败：没懂！！！！ failed，despair。
 <br>
+<br>
+<br>
+
 # Macros-define syntax
 <br>
+<br>
 一个早有听过，但从未去了解过的概念/主题：宏
+<br>
 <br>
 百度中的概念：宏就是一些命令组织在一起，作为一个单独命令完成一个特定任务
 <br>
 宏更像是一种替换
 <br>
+
 ![image-20240331131035702](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331131035702.png)
 <br>
+
 ![image-20240331131109510](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331131109510.png)
+<br>
 <br>
 执行程序之前的条件编译
 <br>
+
 ![image-20240331133143534](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331133143534.png)
+<br>
 <br>
 是否可以理解为，宏就是提供了一种替换，因为先于程序执行，所以可以替换程序中函数的实现，同时因为是替换，不存在函数中的参数求值，等等
 <br>
+
 ![image-20240331133811032](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331133811032.png)
 <br>
+
 ![image-20240331135546919](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240331135546919.png)
 <br>
+<br>
+<br>
+
 # Declarative Programming
+<br>
 <br>
 声明式编程，aha，一个全新的概念！
 <br>
+<br>
 我们的程序主要是命令式的，程序由命令组成，这些命令告诉我们如何执行某些计算。
+<br>
 <br>
 声明式编程：程序描述所需结果的特征，让系统去计算如何得到这些。fantastic，我要什么，然后让计算机去想办法获取结果。
 <br>
+<br>
 One current version is **programming by example**, in which one gives examples of desired results and tries to get the system to generalize this into an algorithm.
 <br>
+
 ![image-20240401225041588](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240401225041588.png)
+<br>
 <br>
 输入：定义对象+其所允许的操作+想要的结果
 <br>
@@ -1556,6 +1727,7 @@ prolog
 <br>
 fact & rule
 <br>
+
 ![image-20240401235223557](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240401235223557.png)
 <br>
 已知：fact
@@ -1564,21 +1736,30 @@ rule：如上
 <br>
 x是z的父亲，如果我们能证明z是y的祖先，我们就可以得到结论：x是y的祖先
 <br>
+<br>
 prolog中我们不定义方法，定义 关系：
 <br>
+
 ![image-20240401235857487](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240401235857487.png)
+<br>
 <br>
 3与-3的关系是abs
 <br>
+
 ![image-20240402000348943](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240402000348943.png)
 <br>
+
 ![image-20240402000426672](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240402000426672.png)
 <br>
+
 封闭宇宙假设： 我们只做肯定的陈述。我们最接近于说某件事情是虚假的，就是说我们无法证明它。
+<br>
 <br>
 amazing thing
 <br>
+
 ![image-20240402001823853](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240402001823853.png)
+<br>
 <br>
 声明事实
 <br>
@@ -1586,23 +1767,34 @@ amazing thing
 <br>
 得到诸多结论
 <br>
+
 ![image-20240402002832404](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240402002832404.png)
 <br>
 More information：课本的4.5节
 <br>
+<br>
+<br>
+
 # Regular Expressions
+<br>
 <br>
 来点也比较有意思的，正则表达式，模式匹配，非确定有限状态自动机。一种声明式编程
 <br>
+<br>
 • We can think of this as a kind of declarative programming, because the programmer is saying, e.g., “find somethin that looks like this” rather than “search for the substring ‘(’, then look for a ’)’ after that” to check for a parenthesized expression.
+<br>
 <br>
 我们给定的字符串是模式的子字符串吗？
 <br>
+<br>
 python中模式的\ 与字符串的转义通常冲突，所以一般用原始字符串表示模式r"\s" ，不过\不能出现在字符串末尾，原始字符串不允许末尾有\。r"\n"= \ \n
+<br>
 <br>
 关于正则表达式的具体内容，算法第四版的介绍已经足够了
 <br>
+<br>
 一些python的语法：
+<br>
 <br>
 mat = re.match
 mat = re.fullmatch
@@ -1610,9 +1802,12 @@ mat = re.search
 boolean(mat)
 mat.group()/mat.groups()，括起来的模式，（括号）不仅可以分组，还可以通过group检索各部分
 <br>
+<br>
+
 ![image-20240403012055916](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240403012055916.png)
 <br>
 遇到矛盾的时候，python 解析第一个
+<br>
 <br>
 
 ```python
@@ -1621,15 +1816,23 @@ mat.group()
 #'wind'
 ```
 <br>
+<br>
 贪婪匹配
 <br>
+
 ![image-20240403012828332](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240403012828332.png)
+<br>
 <br>
 惰性匹配
 <br>
+
 ![image-20240403013413586](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240403013413586.png)
 <br>
+<br>
+<br>
+
 # BNF
+<br>
 <br>
 巴科斯范式 one more concept
 <br>
@@ -1663,6 +1866,9 @@ BNF的语法结构：
 <br>
 ![image-20240404141043605](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240404141043605.png)
 <br>
+<br>
+<br>
+
 # Conclusion
 <br>
 ![image-20240404150732078](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240404150732078.png)
@@ -1670,6 +1876,7 @@ BNF的语法结构：
 # Project: Interpreter
 <br>
 Many interpreters use a **Read-Eval-Print Loop (REPL)**. This loop waits for user input, and then processes it in three steps:
+<br>
 <br>
 1.Read :
 <br>
@@ -1691,6 +1898,8 @@ eval 与 apply 之间相互递归，求值表达式&得到value
 <br>
 Display result
 <br>
+
 ![image-20240405141448565](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20240405141448565.png)
+<br>
 <br>
 在正式开始项目前，lab11非常有意思，在定义好了类与职责后，完美的再现了求值过程中的递归，即使表达式几乎看不到一丁点的递归的代码影子！如此精巧与简洁，simple code huge power ！每次看这些总是觉得自己一直以来写的是什么鬼东西啊...
