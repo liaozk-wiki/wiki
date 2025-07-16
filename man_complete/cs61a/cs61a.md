@@ -1136,13 +1136,13 @@ A recursive function is a function that calls itself in its body, either directl
   1. Figure out your base case
   2. Make a recursive call with a simpler argument
   3. Use your recursive call to solve the full problem
-  <br>
-  Tree Recursion
-  <br>
-  树递归，就是递归方法调用自己超过一次。
-<br>
-<br>
-<br>
+    <br>
+    Tree Recursion
+    <br>
+    树递归，就是递归方法调用自己超过一次。
+    <br>
+    <br>
+    <br>
 
 ## 一个挑战：
 <br>
@@ -1168,9 +1168,23 @@ def count_k(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
+    if n < 0 :
+        return 0
+    elif n == 0:
+        return 1
+    else :
+        sum = 0
+        for i in range(1, k+1):
+            sum += count_k(n-i, k)
+
+        return sum
+      #2025-07-16 : 整理文档时解决！ yes！yes！ 
 ````
 <br>
 又一个习题：挑战失败...，完全没有思路。感觉要卡死在这里了...
+
+
+
 <br>
 
 # Exception
