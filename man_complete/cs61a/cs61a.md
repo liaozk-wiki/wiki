@@ -17,13 +17,19 @@ programming means a great deal more, including
 2. Analysis of the performance of programs. 
 3. Confirmation of their correct operation. 
 4. Management of their complexity.
-<br>
-<br>
+
+
+
 编程就是对复杂性的管理
 <br>
+
+
+
 # other
 <br>
+
 A key principle in software development is that it is generally better for code to crash than produce an incorrect result
+
 <br>
 python debug：
 
@@ -1136,6 +1142,7 @@ A recursive function is a function that calls itself in its body, either directl
   1. Figure out your base case
   2. Make a recursive call with a simpler argument
   3. Use your recursive call to solve the full problem
+
     <br>
     Tree Recursion
     <br>
