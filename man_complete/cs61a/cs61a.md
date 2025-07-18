@@ -59,15 +59,15 @@ python中的多变量：
 
 ```python
 x,y = 10,11
-<br>
+
 L=[(a,b),(c,d)]
 for x,y in L:
   pass
-<br>
+
 S = [a,b,c]
 for x,y in zip(range(1,4),S):
   pass
-<br>
+
 ```
 <br>
 破坏性操作 & 非破坏性操作
@@ -104,12 +104,12 @@ def append(name):
   
 """
 python 看见赋值= 就会创建一个局部变量 current 而其没有初始化 就参与 current+1 的计算了
-<br>
+
 to slove:
 global & nonlocal
 Avoiding global:
 "Just because you can do something in a language, it doesn't mean you should." - Prof Fox
-<br>
+
 Re-assigning global variables inside functions can lead to more brittle and unpredictable code.
 """
 ````
@@ -321,7 +321,7 @@ while & recursive
 
 ````
 false and (condition)
-<br>
+
 后面的condition 不会计算，like java
 ````
 <br>
@@ -660,7 +660,7 @@ def div_by_primes_under_no_lambda1(n):
             checker = inner
         i = i + 1
     return checker
-<br>
+
 def div_by_primes_under_no_lambda(n):
     """
     >>> div_by_primes_under_no_lambda(10)(11)
@@ -684,7 +684,7 @@ def div_by_primes_under_no_lambda(n):
             checker = outer(checker, i)
         i = i + 1
     return checker
-<br>
+
 def three_memory(n):
     """
     >>> f = three_memory('first')
@@ -748,11 +748,11 @@ print sums(1)(3)(5)
 <br>
 语义说明则由两部分构成
 <br>
-<br>
 ​		1. 前置条件：对调用者的约束
 ​		2. 后置条件：方法实现者的保证（这个方法会返回给你什么)
 <br>
 进一步分解则是：
+
 1. 调用者只考虑，提供参数&使用结果，不关心方法实现
 2. 方法实现者，只考虑如何compute result，不关心参数的提供&结果的使用
 3. 从客户端的角度，signature 就是一系列可能计算出结果的方法的抽象概念。用了ta就能得到想要的结果。
@@ -1143,13 +1143,11 @@ A recursive function is a function that calls itself in its body, either directl
   2. Make a recursive call with a simpler argument
   3. Use your recursive call to solve the full problem
 
-    <br>
-    Tree Recursion
-    <br>
-    树递归，就是递归方法调用自己超过一次。
-    <br>
-    <br>
-    <br>
+
+
+Tree Recursion
+
+树递归，就是递归方法调用自己超过一次。
 
 ## 一个挑战：
 <br>
