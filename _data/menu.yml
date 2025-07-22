@@ -67,8 +67,8 @@ entries:
             url: man_complete/algorithms4th/e.字符串
       - title: cs61b-梦开始的地方
         entries:
-          - title: 实验
-          - title: csapp记录    
+          - title: cs61b
+            url: man_complete/cs61b/cs61b
             
   #- title: PRO TIP
     #entries:
