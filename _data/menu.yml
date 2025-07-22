@@ -51,8 +51,16 @@ entries:
             url: man_complete/cs61a/cs61a
       - title: 算法4th
         entries:
-          - title: 实验
-          - title: csapp记录
+          - title: 前言
+            url: man_complete/algorithms4th/a.前言
+          - title: 排序
+            url: man_complete/algorithms4th/b.排序
+          - title: 查找
+            url: man_complete/algorithms4th/c.查找
+          - title: 图
+            url: man_complete/algorithms4th/d.图
+          - title: 字符串
+            url: man_complete/algorithms4th/e.字符串
       - title: cs61b-梦开始的地方
         entries:
           - title: 实验
