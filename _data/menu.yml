@@ -41,8 +41,12 @@ entries:
             url: man_complete/os/操作系统_持久化
       - title: csapp
         entries:
-          - title: 实验
-          - title: csapp记录
+          - title: 实验记录
+            url: man_complete/csapp/a.实验记录
+          - title: 程序结构和执行
+            url: man_complete/csapp/b.程序结构和执行
+          - title: 操作系统上的程序
+            url: man_complete/csapp/c.操作系统上的程序
       - title: cs61a
         entries:
           - title: 总结
