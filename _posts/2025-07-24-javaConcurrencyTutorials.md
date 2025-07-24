@@ -9,13 +9,19 @@ java concurrency
 
 大部分内容均整理自 https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
 
+<br>
+
+<br>
+
 # Processes and Threads
 
 线程与进程的概念，没什么好介绍的
 
 Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a [`ProcessBuilder`](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html) object
 
+<br>
 
+<br>
 
 # Thread Objects
 
@@ -25,6 +31,12 @@ Most implementations of the Java virtual machine run as a single process. A Java
 
 - To directly control thread creation and management, simply instantiate `Thread` each time the application needs to initiate an asynchronous task.
 - To abstract thread management from the rest of your application, pass the application's tasks to an *executor*（[high-level concurrency objects](https://docs.oracle.com/javase/tutorial/essential/concurrency/highlevel.html)）.
+
+
+
+<br>
+
+<br>
 
 
 
@@ -73,7 +85,9 @@ public class HelloThread extends  Thread {
 
 一般使用runnable：Not only is this approach more flexible, but it is applicable to the high-level thread management APIs covered later.
 
+<br>
 
+<br>
 
 
 
@@ -87,7 +101,9 @@ sleep(1000) 相当于告诉OS，我这个线程先睡1000毫秒，你把我从�
 
 
 
+<br>
 
+<br>
 
 ## Interrupts
 
@@ -99,11 +115,17 @@ sleep(1000) 相当于告诉OS，我这个线程先睡1000毫秒，你把我从�
 
 
 
+<br>
+
+<br>
+
 ## Join
 
 like pthread`s join
 
+<br>
 
+<br>
 
 # Synchronization
 
@@ -112,6 +134,10 @@ like pthread`s join
 进程之间的通信，可以有管道，信号，socket等等
 
 线程之间的通信，主要要是 共享内存。This form of communication is extremely efficient, but makes two kinds of errors possible: *thread interference* and *memory consistency errors*
+
+<br>
+
+<br>
 
 
 
@@ -162,6 +188,10 @@ class Counter {
 
 
 
+<br>
+
+<br>
+
 ## Memory Consistency Errors
 
 涉及可见性
@@ -171,6 +201,10 @@ java提供了编程语言层级的一致性保证：happen-before，不过此时
 For a list of actions that create happens-before relationships, refer to the [Summary page of the `java.util.concurrent` package.](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html#MemoryVisibility).
 
 
+
+<br>
+
+<br>
 
 ## Synchronized Methods
 
@@ -187,7 +221,9 @@ java 提供了两个同步原语：*synchronized methods* and *synchronized stat
 
 注意：synchronized修饰构造方法，没有意义。不要在构造函数中将 `this` 引用暴露给外部（如加入全局列表），否则其他线程可能访问到一个尚未构造完成的对象，导致线程安全问题。
 
+<br>
 
+<br>
 
 
 
@@ -207,6 +243,10 @@ java 提供了两个同步原语：*synchronized methods* and *synchronized stat
 
 
 
+<br>
+
+<br>
+
 ## <span id=Atomic Access>Atomic Access</span>
 
 
@@ -220,23 +260,31 @@ volatile解决了可见性，但没有解决原子性，i++ 依然会出错。
 
 
 
+<br>
 
+<br>
 
 # Liveness
 
 活跃性：A concurrent application's ability to execute in a timely manner is known as its *liveness* 程序能及时的执行下去
 
+<br>
 
+<br>
 
 ## Deadlock
 
+<br>
 
+<br>
 
 ## Starvation and Livelock
 
 活锁：你靠右让行，对向靠左让行🤣
 
+<br>
 
+<br>
 
 # Guarded Blocks
 
@@ -246,7 +294,9 @@ volatile解决了可见性，但没有解决原子性，i++ 依然会出错。
 
 一个基于synchronize 的生产者-消费者模型：[prod-consum](https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html)
 
+<br>
 
+<br>
 
 # Immutable Objects
 
@@ -268,7 +318,13 @@ synchronized (color) {
 
 
 
+<br>
+
+<br>
+
 # High Level Concurrency Objects
+
+<br>
 
 
 
@@ -276,13 +332,13 @@ synchronized (color) {
 
 简单的介绍了下ReentrantLock，并演示了如何使用ReentrantLock，来避免前面的bow死锁：bow前，先试图获取两把锁，只成功了一把，就放弃另一把。
 
-
+<br>
 
 ## Executors
 
 it makes sense to separate thread management and creation from the rest of the application
 
-
+<br>
 
 ### Executor Interfaces
 
@@ -290,9 +346,13 @@ it makes sense to separate thread management and creation from the rest of the a
 - `ExecutorService`, a subinterface of `Executor`, which adds features that help manage the life cycle, both of the individual tasks and of the executor itself.新增了周期管理
 - `ScheduledExecutorService`, a subinterface of `ExecutorService`, supports future and/or periodic execution of tasks.继续新增了任务调度
 
+<br>
+
 ### Thread Pools
 
 线程池
+
+<br>
 
 ### Fork/Join 
 
@@ -351,6 +411,10 @@ public class SumTask extends RecursiveTask<Long> {
 
 
 
+<br>
+
+<br>
+
 
 
 ## Concurrent Collections
@@ -363,7 +427,9 @@ public class SumTask extends RecursiveTask<Long> {
 
 
 
+<br>
 
+<br>
 
 ## Atomic Variables
 
@@ -371,7 +437,9 @@ public class SumTask extends RecursiveTask<Long> {
 
 atomic 不仅提供了内存一致性，也提供了原子性，同时也包含了happen-before
 
+<br>
 
+<br>
 
 ## Concurrent Random Numbers
 
@@ -379,7 +447,9 @@ atomic 不仅提供了内存一致性，也提供了原子性，同时也包含�
 int r = ThreadLocalRandom.current() .nextInt(4, 77);
 ```
 
+<br>
 
+<br>
 
 
 
@@ -389,9 +459,17 @@ int r = ThreadLocalRandom.current() .nextInt(4, 77);
 
 
 
+<br>
+
+<br>
+
 # Memory model
 
 [JSR-133 FAQ ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html?spm=a2ty_o01.29997173.0.0.37d7c921QuFSU6) 暂时不去了解
+
+<br>
+
+<br>
 
 
 
@@ -485,6 +563,10 @@ ExecutorService ex = Executors.newFixedThreadPool(2)
 
 ForkJoinPool
 
+<br>
+
+<br>
+
 
 
 ## 同步工具
@@ -493,13 +575,13 @@ CountDownLatch
 
 就不给出示例了，理解为join的增强版。join的使用需要Thread对象，但实际业务中多用线程池，所以就在每个线程countDown，主线程await。
 
-
+<br>
 
 CyclicBarrier
 
 简单理解为自动重置的CountDownLatch
 
-
+<br>
 
 Semaphore
 
@@ -507,7 +589,7 @@ Semaphore
 
 [基于锁、条件变量、信号量分别实现生产者-消费者](https://liaozk.wiki/%E5%B9%B6%E5%8F%91.html#%E5%90%8C%E6%AD%A5)
 
-
+<br>
 
 Phaser
 
@@ -515,7 +597,7 @@ Phaser
 
 
 
-
+<br>
 
 ## 并发集合
 
@@ -533,6 +615,8 @@ ConcurrentHashMap，的线程安全原理：
 
 
 
+<br>
+
 CopyOnWriteArrayList
 
 读不加锁。
@@ -542,6 +626,8 @@ CopyOnWriteArrayList
 弱一致性，看到的可能是旧快照。
 
 
+
+<br>
 
 BlockingQueue
 
@@ -557,7 +643,9 @@ dequeue 需要condition notEmpty满足
 
 
 
+<br>
 
+<br>
 
 
 
@@ -587,7 +675,9 @@ OS底层同步原语（如 futex、mutex、condition variable 等）来实现阻
 
 
 
+<br>
 
+<br>
 
 
 
@@ -597,11 +687,17 @@ compare and set
 
 
 
+<br>
+
 ## COW
 
 copy on write
 
 想像一下进程fork时的内存处理
+
+
+
+<br>
 
 
 
@@ -638,13 +734,17 @@ if (CAS(object.markWord, oldMark, pointer_to_lock_record)) {
 
 
 
+<br>
+
+
+
 ## 线程池工作原理
 
 生产者-消费者模型可以解决90%的并发问题
 
 
 
-
+<br>
 
 
 
@@ -654,7 +754,17 @@ threadlocal存在与heap中
 
 每个Thread对象有`ThreadLocal.ThreadLocalMap threadLocals `
 
+<br>
 
+# 虚拟线程
+
+首先一个疑问：虚拟线程是协程吗？
+
+1. 传统线程是操作系统的线程，会调用操作系统的api
+2. 虚拟线程是运行在JVM上的，一个OS线程上可以运行多个虚拟线程，JVM调度虚拟线程到os线程上去执行
+3. 因为是在JVM上创建，资源占用小，遇到一些阻塞JVM就直接挂起切换了，适合IO密集型
+
+协程完全是用户自己管理的，虚拟线程由jvm管理，对于OS来说，二者都是用户态，对于java来说虚拟线程属于JVM，与业务代码无关。
 
 
 
