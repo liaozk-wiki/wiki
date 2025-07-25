@@ -88,7 +88,7 @@ div.highlighter-rouge code {
 
 code {
   color: #333; // 深色文本
-  background: #f1f1f1; // 浅灰色背景
+  background: #f0f0f0; // 浅灰色背景
   padding: 0.2em 0.4em; // 内边距
   border-radius: 3px; // 圆角边框
   font-family: 'Consolas', 'Monaco', monospace; // 等宽字体
@@ -109,7 +109,7 @@ div.highlighter-rouge {
   overflow: hidden; // 隐藏溢出内容
   //box-shadow: 0 3px 10px rgba(0,0,0,0.15); // 增强阴影效果
   border: 1px solid #e1e4e8; // 添加明显边框
-  background-color: #f0f0f0; // GitHub风格背景色
+  background-color: #f6f8fa; // GitHub风格背景色
 }
 
 div.highlighter-rouge code {
@@ -117,7 +117,7 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre;
   padding: 1rem;
-  background: #f7f7f7; // 代码块背景色
+  background: #f6f8fa; // 代码块背景色
   color: #333; // 代码文本色
   font-family: 'Consolas', 'Monaco', monospace; // 等宽字体
   line-height: 1.5; // 行高
@@ -138,9 +138,9 @@ blockquote {
   border-left: 4px solid #ddd; // Typora风格左侧边框
   padding: 0.5rem 1rem; // 内边距调整
   margin: 1rem 0; // 外边距
-  background-color: #f9f9f9; // 浅灰色背景
+  background-color: #f6f8fa; // 浅灰色背景
   border-radius: 0 4px 4px 0; // 右侧圆角
-  color: #666; // 文字颜色
+  color: #333; // 文字颜色
 
   p { margin: 0; }
 }
