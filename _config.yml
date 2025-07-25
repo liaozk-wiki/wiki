@@ -36,3 +36,5 @@ jektex:
     - ["\\Q", "\\mathbb{Q}"]
     - ["\\C", "\\mathbb{C}"]
 
+markdown: kramdown
+highlighter: rouge

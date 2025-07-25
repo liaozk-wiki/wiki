@@ -72,7 +72,7 @@ table, th, td {
   border-collapse: collapse;
   padding: 0.4rem;
 }
-
+/*
 code {
   color: white;
   background: black;
@@ -84,6 +84,35 @@ div.highlighter-rouge code {
   white-space: pre-wrap;
   padding: 1rem;
 }
+*/
+
+code {
+  color: #333; // 深色文本
+  background: #f1f1f1; // 浅灰色背景
+  padding: 0.2em 0.4em; // 内边距
+  border-radius: 3px; // 圆角边框
+  font-family: 'Consolas', 'Monaco', monospace; // 等宽字体
+}
+
+div.highlighter-rouge {
+  margin: 1em 0; // 上下外边距
+  border-radius: 4px; // 圆角边框
+  overflow: hidden; // 隐藏溢出内容
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1); // 轻微阴影
+}
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  padding: 1rem;
+  background: #f7f7f7; // 代码块背景色
+  color: #333; // 代码文本色
+  font-family: 'Consolas', 'Monaco', monospace; // 等宽字体
+  line-height: 1.5; // 行高
+}
+
+
 
 blockquote {
   font-style: italic;
