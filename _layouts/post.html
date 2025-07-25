@@ -41,4 +41,20 @@ layout: default
             }
         });
     });
+
+    // 为有二级目录的项添加切换控件
+  document.querySelectorAll('.scroll-nav__item:has(.scroll-nav__sub-list)').forEach(item => {
+    const link = item.querySelector('a');
+    const toggle = document.createElement('span');
+    toggle.className = 'scroll-nav__toggle';
+    link.parentNode.insertBefore(toggle, link.nextSibling);
+
+    // 点击切换展开/折叠状态
+    toggle.addEventListener('click', () => {
+      item.classList.toggle('scroll-nav__item--expanded');
+    });
+  });
+
+
+
 </script>

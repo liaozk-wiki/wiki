@@ -123,6 +123,11 @@ img {
   font-family: monospace;
   font-size: inherit;
   line-height: 1.4;
+
+  // 添加滚动功能
+  max-height: 70vh;  // 限制高度为视口的70%
+  overflow-y: auto;  // 启用垂直滚动
+  overflow-x: hidden; // 隐藏水平滚动条
 }
 
 
@@ -131,6 +136,42 @@ img {
   padding-left: 1.4em;
   list-style-type: none;
   line-height: 20px;
+}
+
+// 添加二级目录折叠样式
+.scroll-nav__sub-list {
+  display: none;  // 默认隐藏二级目录
+  margin-left: 0.5rem;  // 缩进二级目录
+}
+
+// 展开状态
+.scroll-nav__item--expanded .scroll-nav__sub-list {
+  display: block;
+}
+
+// 添加展开/折叠控件样式
+.scroll-nav__toggle {
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  position: relative;
+}
+
+// 控件箭头
+.scroll-nav__toggle::before {
+  content: '▼';
+  font-size: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 展开状态的箭头
+.scroll-nav__item--expanded .scroll-nav__toggle::before {
+  content: '▲';
 }
 
 
