@@ -718,11 +718,16 @@ stack的锁记录是 lock record
 CAS：
 
 线程 A 的栈：
+
+```txt
 +------------------+
 |   Lock Record    |
 | - obj: 指向对象  |
 | - mark: 备份Mark  |
 +------------------+
+```
+
+
 
 ```java
 if (CAS(object.markWord, oldMark, pointer_to_lock_record)) {
