@@ -2006,6 +2006,30 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 13.15了吃个饭再回来继续
 
+先简单的介绍2-3-4树的插入：
+
+1.向下的时候将所有的4结点打散
+
+2.向上的时候将所有的4结点配平（虽然2-3-4树允许4结点，但红黑树不允许一个root两个红链接，需要参照23树对配平）
+
+![image-20250727150546100](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727150546100.png)
+
+
+
+红黑树的删除也是类似存在向下时的丰腴（允许临时存在4结点）&向上时的配平（消除丰腴的4结点）
+
+向下查找时主动将路径上所有2结点变成3结点/4结点，优先从兄弟借，兄弟没有就与父结点最小键合并
+
+最终将问题转化为在父结点不是2结点的子树中删除最小键。
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727150821486.png" alt="image-20250727150821486" style="zoom:33%;" />
+
+
+
+
+
+
+
 
 
 
