@@ -10,13 +10,13 @@ title: 查找
 16:46 在闷热了许久之后，终于有丝丝凉意袭来。
 <br>
 
-### 1.符号表
+# 1.符号表
 
 <br>
 关于查找算法，我们需要研究的第一个数据结构便是符合表，对其最通俗易懂的解释则是：一个key-value形式的映射关系，字典。
 <br>
 
-#### api
+## api
 
 <br>
 一个简单的符号表api：
@@ -79,7 +79,7 @@ public interface SimpleOrderST<Key extends Comparable<Key>,Value> {
 关于符号表的一些细节，诸如：null key，null value，重复的key，key的等价性等诸多细节，还是得看书上...
 <br>
 
-#### 用例
+## 用例
 
 <br>
 在学习符号表的具体实现之前，先给一个符号表的用例，毕竟 影响我们具体实现的最大因素便是我们对将要实现的东西的理解程度（功能决定形态？🤣）。
@@ -118,7 +118,7 @@ public class FrequencyCounter {
 
 <br>
 
-#### 实现之无序链表
+## 实现之无序链表
 
 <br>
 使用链表来实现符号表，其中每对 k-v 就是链表中的一个node
@@ -219,7 +219,7 @@ public class SequentialSearchST<Key,Value> implements SimpleST<Key,Value> {
 
 <br>
 
-#### 无序链表实现的性能分析
+## 无序链表实现的性能分析
 
 <br>
 我想《算法》之所以为经典，不同于网上随处可见的各类n万字的算法笔记的关键之处便在于其对“某种”思维的培养。如果你并不觉得我们需要更快的实现，那么我们就先来探索一下当前实现的性能。
@@ -231,7 +231,7 @@ public class SequentialSearchST<Key,Value> implements SimpleST<Key,Value> {
 平均每一次的put需要访问4000多个node...
 <br>
 
-#### 实现之有序数组
+## 实现之有序数组
 
 使用的数据结构是一对平行的数组，一个储存键，一个储存值。在有序的符号表api中，我们需要理解的核心便是
 <br>
@@ -379,7 +379,7 @@ public class BinarySearchOrderST<Key extends Comparable<Key>, Value> implements 
 
 <br>
 
-### 2.二叉查找树
+# 2.二叉查找树
 
 <br>
 Binary Search Trees
@@ -444,7 +444,7 @@ Binary Search Trees:
 
 
 
-#### show me code
+## show me code
 
 <br>
 Tips:在用到一些递归场景的时候，注意 arms-length base case
@@ -832,7 +832,7 @@ public class BSTMap<Key extends Comparable<Key>, Value> implements SimpleOrderST
 上面已经包含了全部的代码，现在对这些进行二次理解，从21年开始转行到现在勉强算三年，一直有一个极大的困惑便是如何学习项目，即使把代码给我，我看了一遍又一遍，对未知的恐惧与不自信依旧存在，直到开始接触cs61b，我暂时先到的最佳实践便是，1.一定要自己实现，2.实现前一定要有那种“枝枝说到叶叶上”版详细的说明。所以下面的结构便是采取：先给出api->每个方法的仔细描述->我的代码实现->书中的代码实现。不要担心时间，在BSTMap上的投入也是在2-3树&图上的投入，这绝对是值得的。
 <br>
 
-#### api：
+## api：
 
 ```java
 package define;
@@ -882,7 +882,7 @@ public interface SimpleOrderST<Key extends Comparable<Key>,Value> {
 
 <br>
 
-#### 数据结构：
+## 数据结构：
 
 ```java
 package define;
@@ -964,7 +964,7 @@ public class BSTMap<Key extends Comparable<Key>, Value> implements SimpleOrderST
 
 <br>
 
-#### get：
+## get：
 
 <br>
 get非常的简单，只需要在树中进行二分查找，没找到就返回null，找到则返回对应value
@@ -995,7 +995,7 @@ get非常的简单，只需要在树中进行二分查找，没找到就返回nu
 
 <br>
 
-#### put：
+## put：
 
 <br>
 对put方法的要求便是：
@@ -1115,7 +1115,7 @@ get非常的简单，只需要在树中进行二分查找，没找到就返回nu
 至此，put方法算是结束了
 <br>
 
-#### delete：
+## delete：
 
 <br>
 现在已经8点了，老实说我到现在都没有完全的信心与决心去完成delete方法，可问题终归要去解决。
@@ -1305,7 +1305,7 @@ public void deleteMin() {
 下面的这种实现很难说有什么天大的错误，为什么代码的复杂度上去了呢？我觉得更多的是对解决方案的抽象不同，再进一步则是对我们将要做的事情的理解限制了代码的最终实现。回到cs61b开篇的那句话：“软件很少被物理条件限制，几乎是一个纯粹的创造性活动，最大的限制是对我们所构建的东西的理解。”
 <br>
 
-#### size：
+## size：
 
 <br>
 size方法，用来统计当前树有多少个节点的，而我们对node里面n的定义则是返回以该结点为root的子树节点数量。故size只需要返回root节点的n即可。
@@ -1328,7 +1328,7 @@ size方法，用来统计当前树有多少个节点的，而我们对node里面
 
 <br>
 
-#### min：
+## min：
 
 <br>
 min方法的目的是找到这棵树最小的节点，根据BST的定义，其存在于树的最左端，left到底。
@@ -1347,7 +1347,7 @@ min方法的目的是找到这棵树最小的节点，根据BST的定义，其�
 
 <br>
 
-#### max：
+## max：
 
 <br>
 max方法是为了返回这棵树的最大的节点，其存在于树的最右端，right到底。
@@ -1373,7 +1373,7 @@ max方法是为了返回这棵树的最大的节点，其存在于树的最右�
 
 <br>
 
-#### floor：
+## floor：
 
 <br>
 再处理完delete之后，floor与ceiling的实现就变得比较简单了，floor：小于key的最大键；ceiling：大于key的最小键，不就是我们在删除中需要处理的左子树的最大值与右子树的最小值。
@@ -1416,13 +1416,13 @@ max方法是为了返回这棵树的最大的节点，其存在于树的最右�
 
 <br>
 
-#### ceiling：
+## ceiling：
 
 <br>
 略
 <br>
 
-#### rank：
+## rank：
 
 <br>
 rank与select 又是比较麻烦的一组，这里涉及到如何在一棵搜索二叉树中定义序列，书中给的定义便是要想找到排名为k的结点，即表明树中有k个结点小于其，故其左子树结点数量应该为k。其右子树rank = 左子树+1；
@@ -1449,7 +1449,7 @@ rank与select 又是比较麻烦的一组，这里涉及到如何在一棵搜索
 
 <br>
 
-#### select：
+## select：
 
 
 
@@ -1478,7 +1478,7 @@ rank与select 又是比较麻烦的一组，这里涉及到如何在一棵搜索
 
 <br>
 
-#### keys：
+## keys：
 
 <br>
 keys的实现 skip。
@@ -1486,7 +1486,7 @@ keys的实现 skip。
 继上周写下BSTMap之后，总算在花了不是那么全神贯注的三个晚上，再次过了一遍，值得吗？可生活哪有这么多值不值得，今晚走神的严重一点，可前两晚上对递归的练习是实实在在的，真真切切的。也许将来不会记得这些，可过去的时间至少让你觉得没那么焦虑，很放松，生活似乎有点意义了。周末，努力干掉2-3树，红黑树，相信在BSTMap上的耗费，会在这些上面事半功倍！生活太难，那就专注当下吧，期望与公交上的学生同行！
 <br>
 
-### 3.2-3树及其红黑树实现
+# 3.2-3树及其红黑树实现
 
 <br>
 14:45 二叉查找树的相关代码，写完感觉人很累，甚至有种完全不想动的感觉了，过去无数次发生在我身上的回忆又回来了，一种无法静心的烦躁，可能源于对前面代码的敷衍式学习，因为身体明显知道自己敷衍了，故虽有时间上的付出，却无任何实际的获得感。不想再学习任何与树有关的结构了。skip this，下周再处理。
@@ -1869,7 +1869,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 查找：obvious
 
-#### 2-3树插入
+## 2-3树插入
 
 1.向只有一个3结点的树插入新的键
 
@@ -1901,7 +1901,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 <img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727120651922.png" alt="image-20250727120651922" style="zoom:33%;" />
 
-#### 红黑树实现2-3树
+## 红黑树实现2-3树
 
 如前面所述：红黑树就是用标准的二叉搜索树去实现2-3树（物理结构是二叉查找树（这棵树是完美黑色链接平衡的），表现形式是2-3树。将所有红链接合并，得到的就是2-3树）。
 
@@ -1917,11 +1917,11 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 
 
-#### 左旋
+## 左旋
 
 <img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727123416324.png" alt="image-20250727123416324" style="zoom:33%;" />
 
-#### 右旋
+## 右旋
 
 
 
@@ -1935,7 +1935,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 
 
-#### 红黑树插入
+## 红黑树插入
 
 让我们来看看红黑树的插入操作：
 
@@ -1966,7 +1966,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 3.3新键小于原树的2个键（将最上层红链接右旋就变成3.1了）
 
-<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727125916008.png" alt="image-20250727125916008" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727125916008.png" alt="image-20250727125916008" style="zoom: 33%;" />
 
 
 
@@ -2012,7 +2012,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 2.向上的时候将所有的4结点配平（虽然2-3-4树允许4结点，但红黑树不允许一个root两个红链接，需要参照23树对配平）
 
-![image-20250727150546100](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727150546100.png)
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727150546100.png" alt="image-20250727150546100" style="zoom:33%;" />
 
 
 
@@ -2046,7 +2046,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 
 
-### 4.散列表
+# 4.散列表
 
 <br>
 这是一个极其通用的数据结构，在我自21年10月入行至今，所待的两个项目，除了arraylist外，hashmap 便是使用最多的了。散列表是算法在时间和空间上作出权衡的经典例子。
@@ -2071,7 +2071,7 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
    有时糟糕的散列函数也是性能问题的罪魁祸首，如果散列计算比较耗时，可以使用缓存，即使用一个变量来保存对象的hashcode，只在第一次使用的时候进行计算。
    <br>
 
-#### 基于拉链法的散列表
+## 基于拉链法的散列表
 
 <br>
 come on baby，i am coming...
@@ -2142,7 +2142,7 @@ public class SeparateChainingHashST <Key, Value> implements SimpleST<Key, Value>
 基于拉链法的散列表对碰撞冲突的解决办法便是将拥有相同hash值的k-v对保存在一个链表/数组内。还有一类处理方式便是在大小m的数组中储存n对k-v，其中m>n，利用多余的空位解决碰撞冲突，采用这种策略的方法统一称为：开放地址散列表。
 <br>
 
-#### 基于线性探测法的散列表
+## 基于线性探测法的散列表
 
 <br>
 开放地址散列表中最简单的方法便是线性探测法。
@@ -2292,7 +2292,7 @@ n/m : 表示散列表的使用率，对于拉链法的散列表，其表示每�
 2. 有序，基本与散列绝缘了。
    <br>
 
-### 5.符号表应用
+# 5.符号表应用
 
 <br>
 我们用索引来描述，一个键与多个值关联的符号表。在map的val中放入一个队列/列表，一个索引便诞生了。
