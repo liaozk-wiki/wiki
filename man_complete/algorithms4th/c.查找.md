@@ -440,6 +440,10 @@ Binary Search Trees:
 
 
 
+树中，一个节点的深度是其到root节点的连接数，高度就是最大的深度。
+
+
+
 #### show me code
 
 <br>
@@ -1851,7 +1855,172 @@ public class RedBlackTree<Key extends Comparable<Key>,Value> implements SimpleOr
 
 20250721 再次复习时，我选择放弃，根本没有概念...，我需要再看一次书或者cs61b中的视频讲解...（😣）
 
-<br>
+
+
+
+
+20250727:
+
+真不能偷懒，还是必须得补充一下口语描述中2-3树 & 红黑树
+
+2-3树：
+
+定义：不再叙述
+
+查找：obvious
+
+#### 2-3树插入
+
+1.向只有一个3结点的树插入新的键
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727114918084.png" alt="image-20250727114918084" style="zoom: 33%;" />
+
+
+
+2.向父=2结点的3结点插入
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727115029848.png" alt="image-20250727115029848" style="zoom:33%;" />
+
+3.向父=3结点的3结点插入新的键
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727115157438.png" alt="image-20250727115157438" style="zoom:33%;" />
+
+4.分解根结点
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727115405101.png" alt="image-20250727115405101" style="zoom:33%;" />
+
+
+
+2-3树4结点分解为2-3树的六种情况：
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727120245921.png" alt="image-20250727120245921" style="zoom: 50%;" />
+
+
+
+2-3树的构造示例：
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727120651922.png" alt="image-20250727120651922" style="zoom:33%;" />
+
+#### 红黑树实现2-3树
+
+如前面所述：红黑树就是用标准的二叉搜索树去实现2-3树（物理结构是二叉查找树（这棵树是完美黑色链接平衡的），表现形式是2-3树。将所有红链接合并，得到的就是2-3树）。
+
+红链接：将两个2结点链接，构建3结点。
+
+黑链接：普通的2-3树链接。
+
+![image-20250727122622113](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727122622113.png)
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727122716013.png" alt="image-20250727122716013" style="zoom:50%;" />
+
+
+
+#### 左旋
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727123416324.png" alt="image-20250727123416324" style="zoom:33%;" />
+
+#### 右旋
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727123444697.png" alt="image-20250727123444697" style="zoom:33%;" />
+
+作为左倾红黑树，其特点就是：
+
+1.一个结点不能有两条红色链接（2-3树定义限制）
+
+2.红色结点必须为左结点（左倾所定义）
+
+
+
+#### 红黑树插入
+
+让我们来看看红黑树的插入操作：
+
+1.向单个2结点拆入新键
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727124547470.png" alt="image-20250727124547470" style="zoom:33%;" />
+
+
+
+2.向树的底部2结点插入新键（总是红链接父结点）
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727124855412.png" alt="image-20250727124855412" style="zoom:33%;" />
+
+
+
+因为是2结点+红链接：
+
+- 插入到左侧：符合红黑树定义
+- 插入到右侧：需要左旋
+
+
+
+3.向3结点插入新键
+
+3.1:新键大于原树的2个键
+
+3.2新键位于原树的2个键中间（将最下层左旋就变成3.3了）
+
+3.3新键小于原树的2个键（将最上层红链接右旋就变成3.1了）
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727125916008.png" alt="image-20250727125916008" style="zoom:50%;" />
+
+
+
+
+
+颜色反转：
+
+注意：不仅将两个子结点red变black，还需要将父结点变为red（因为是从4结点提一个向上生长，故父结点一定是红色（原本的2结点变为3结点了））
+
+
+
+根结点永远是黑色：
+
+一旦出现根结点由红变黑意味树的高度+1
+
+
+
+
+
+红链接在树中的向上传递：
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727131120478.png" alt="image-20250727131120478" style="zoom:33%;" />
+
+
+
+
+
+红黑树的插入示例：
+
+<img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727131246214.png" alt="image-20250727131246214" style="zoom:33%;" />
+
+
+
+
+
+#### 红黑树删除
+
+13.15了吃个饭再回来继续
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 4.散列表
 
