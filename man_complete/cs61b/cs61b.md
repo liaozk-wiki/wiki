@@ -4,7 +4,13 @@ title: cs61b
 ---
 
 
-### CS61b
+# CS61b
+cs61b，一切开始的地方，再次回顾，几乎不记得什么具体的内容了。不过依然记得那一句：Don`t fear.
+
+
+
+
+
 <br>
 Software Engineer:
 <br>
@@ -198,7 +204,7 @@ Stack:filo.  堆内存：系统分配，比较小；  link & array
 GrabBag:(insert, remove,sample,size);  array
 <br>
 
-### 1.Disjoint Sets
+# 1.Disjoint Sets
 <br>
 Inverse acrmen function;
 <br>
@@ -218,7 +224,7 @@ Implement：
 
 
 
-### 2.Binary Search Trees
+# 2.Binary Search Trees
 <br>
 (Skip List?)
 <br>
@@ -264,7 +270,7 @@ Operations:
 ![截屏2023-06-10 12.17.19](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%88%AA%E5%B1%8F2023-06-10%2012.17.19.png)
 <br>
 
-### 3.B-Tree
+# 3.B-Tree
 <br>
 Worst case BST hight is O(N);
 <br>
@@ -318,7 +324,7 @@ B-Tree`s invariants:
 
 
 
-### 4.Red Black Tree
+# 4.Red Black Tree
 <br>
 Catalan(N)?
 <br>
@@ -338,7 +344,7 @@ Red-Black Tree Insert:
 <br>
 ![截屏2023-06-11 10.34.19](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%88%AA%E5%B1%8F2023-06-11%2010.34.19.png)
 <br>
-### 5.Hash:Data Index
+# 5.Hash:Data Index
 Using data as an index;
 <br>
 ![截屏2023-06-11 11.45.30](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%88%AA%E5%B1%8F2023-06-11%2011.45.30.png)
@@ -366,7 +372,7 @@ process negative:Math.floorMod(-1,4);because -1%4=-1 in java;
 Use a prime base:乘以一个基数（质数最好)以获取更好的随机性。
 <br>
 
-### 6.Priority Queue Interface & Heap
+# 6.Priority Queue Interface & Heap
 <br>
 Queue only trace smallest element;
 <br>
@@ -388,7 +394,7 @@ Approach2:key[]+parents[]. Like disjoinSets;
 <br>
 Approach3:assume full tree, just key[],ignore parent[]；parent=(n-1)/2;left=?;right=?
 <br>
-### 7.Search Data Structures
+# 7.Search Data Structures
 <br>
 Search information form data;
 <br>
@@ -397,7 +403,7 @@ List,Map,Set,PQ,Disjoint Sets
 ![截屏2023-06-13 12.23.58](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%88%AA%E5%B1%8F2023-06-13%2012.23.58.png)
 <br>
 
-### 8.Graph
+# 8.Graph
 <br>
 Tree are more general concept
 <br>
@@ -468,7 +474,7 @@ Djstra
 优先级队列+释放
 <br>
 
-### 9.Minimum spaning trees
+# 9.Minimum spaning trees
 <br>
 如何判断一个图是否存在环？
 <br>
@@ -522,7 +528,7 @@ Kruskal`s Algorithm:
 ![截屏2023-06-15 10.51.10](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%88%AA%E5%B1%8F2023-06-15%2010.51.10.png)
 <br>
 
-### 10.Range Searching and Multi-Dimensional Data
+# 10.Range Searching and Multi-Dimensional Data
 <br>
 需求：最小的一个/最大的一个/范围（3～20）的数据
 <br>
@@ -567,7 +573,7 @@ Quadtree
 K-d Tree:K-dimensional Binary Search Tree;
 <br>
 
-### 11.Tries
+# 11.Tries
 <br>
 Short for Retrieval Tree
 <br>
@@ -581,7 +587,7 @@ implement:
 
 
 
-### 12.Topological Sort
+# 12.Topological Sort
 
 
 
@@ -596,13 +602,13 @@ DAG SPT Algorithm:Relax in Topological Order;
 DAG Longest Path Algorithm:模拟最短，赋值负数。
 <br>
 
-### 13.Reduction
+# 13.Reduction
 <br>
 if any subrortine for task Q can be used to solve P ,we say P reduces to Q;
 <br>
 (Karp and Cook reductions)
 <br>
-### 14.Sort
+# 14.Sort
 <br>
 三角性：a>b a=b a<b. 有一个为真
 <br>

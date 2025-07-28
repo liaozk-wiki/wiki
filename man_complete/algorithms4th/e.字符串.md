@@ -16,13 +16,13 @@ title: 字符串
 字符串的算法不仅仅只适用于字符串，流也可以理解为字符串，一切皆是字符串！
 <br>
 
-### 字符串排序(radix sort)
+# 字符串排序(radix sort)
 
 <br>
 在介绍索引计数法之前，可以思考下如何排序定长的数字，【1234，1235，1236，1321】。
 <br>
 
-#### 键索引计数法( counting sort )
+## 键索引计数法( counting sort )
 
 <img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250727160736518.png" alt="image-20250727160736518" style="zoom:25%;" />
 
@@ -47,7 +47,7 @@ step3-辅助数组进行排序，扫描到的第一个2放到数组的第三个�
 
 <br>
 
-#### 低位优先
+## 低位优先
 
 <br>
 定长字符串w，从左到右，去字符作为key进行w次索引计数法。
@@ -91,7 +91,7 @@ public class LSD {
 
 <br>
 
-#### 高位优先
+## 高位优先
 
 <br>
 地位优先，要求字符串定长，要对不定长的字符串进行基数排序时，则需要使用高位优先基数排序。
@@ -174,7 +174,7 @@ public class MSD {
 字符串中，其他基于compareTo的排序算法，都可以算是高位优先排序算法。
 <br>
 
-#### 三向字符串快速排序
+## 三向字符串快速排序
 
 ```java
 package algorithm;
@@ -228,7 +228,7 @@ public class Quick3String {
 
 <br>
 
-### 单词查找树（trie）
+# 单词查找树（trie）
 
 <br>
 Trie 与 字符串为key的符号表，之间有什么联系？
@@ -439,7 +439,7 @@ public class TST<Value> {
 //todo 需要后续手撸一遍！并完成习题！！！
 <br>
 
-### 子字符串查找
+# 子字符串查找
 
 <br>
 整体的描述就是在一篇文章中查找目标字符串。相比于前面的算法，这个我是感觉难多了，之前稍微了解过一点kmp模式匹配，只能说完全没看懂。so，向曾经为能逾越的高峰发起挑战！
@@ -447,7 +447,7 @@ public class TST<Value> {
 关于字符串这一数据结构的描述此处不再多言，关于字符串匹配最直观的算法便是：
 <br>
 
-#### 暴力匹配算法(brute force)
+## 暴力匹配算法(brute force)
 
 ```java
 package algorithm;
@@ -496,12 +496,12 @@ public class BruteForce {
 
 <br>
 
-#### KMP
+## KMP
 
 <br>
 相比于暴力匹配，kmp的核心则是想办法，当不匹配时，利用已有的信息，避免回退太多了，少回退几个字符。
 <br>
-dfa：**有限状态自动机**dfa[char] [j] :在匹配pat第j个时碰到了char，text下一个字符应该与pat的那一个进行匹配。
+dfa：**确定有限状态自动机（Deterministic Finite Automaton）**dfa[char] [j] :在匹配pat第j个时碰到了char，text下一个字符应该与pat的那一个进行匹配。
 <br>
 Dfa[pat.charAt(j)] [j] = j + 1;
 <br>
@@ -509,7 +509,7 @@ Dfa[pat.charAt(j)] [j] = j + 1;
 <br>
 构造dfa，只与pat有关。
 <br>
-理解dfa的一个关键便是，一个是在txt中匹配pat，一个是在pat中匹配pat[0~x]，使得pat[0~x] = pat[j-x, j]相同，我们要在pat中找到0到j中，找到首位相同的最长字符串，有些地方的讲解中使用的是next数组，next数组其实就是此处每一位j对应的x。
+理解dfa的一个关键便是，一个是在txt中匹配pat，一个是在pat中匹配pat[0 ~ x]，使得pat[0 ~ x] = pat[j-x, j]相同，我们要在pat中找到0到j中，找到首位相同的最长字符串，有些地方的讲解中使用的是next数组，next数组其实就是此处每一位j对应的x。
 <br>
 简单的几行代码，非常值得回味！
 
@@ -554,7 +554,7 @@ public class KMP {
 构造dfa需要的代价是pat.lenngth * r,遍历字符串需要的代价是 text.length，总的复杂度则是：pat.length+text.length。
 <br>
 
-#### Boyer-Moore
+## Boyer-Moore
 
 <br>
 启发式的处理不匹配字符。
@@ -620,7 +620,7 @@ public class BoyerMoore {
 bm算法，算是效率不错，也比较简单易懂的，与kmp一样，都是暴力搜索算法的优化，将不匹配时移动一个位置，尽可能的变为移动多个。
 <br>
 
-#### Rabin-Karp
+## Rabin-Karp
 
 <br>
 rk这是，对text所有可能的子字符串计算散列值，然后比较散列后的结果。暴力匹配，需要回退，rk则一直前进。
@@ -641,7 +641,7 @@ rk这是，对text所有可能的子字符串计算散列值，然后比较散�
 
 <br>
 
-### 正则表达式
+# 正则表达式
 
 <br>
 更通用的描述则是模式匹配。
@@ -791,7 +791,7 @@ public class NFA {
 
 <br>
 
-### 数据压缩
+# 数据压缩
 
 <br>
 想起了遥感导论。
@@ -819,13 +819,13 @@ public class NFA {
 4.较长的连续重复的位/字符
 <br>
 
-#### 游程编码
+## 游程编码
 
 <br>
 000011000 -> 423(01交替出现，可以使用游程长度0来保证所有游程长度不至于超标)
 <br>
 
-#### 霍夫曼压缩
+## 霍夫曼压缩
 
 <br>
 能够大幅度压缩自然语言文件空间（以保存自然语言为目的的文件）。
@@ -1063,7 +1063,7 @@ public class Huffman {
 
 <br>
 
-#### LZW压缩算法
+## LZW压缩算法
 
 <br>
 霍夫曼是为输入中的定长，产生一张变长的编码表，lzw这是为变长模式生成一张定长编译表，重点是输出中无需附上这张表。
@@ -1075,7 +1075,7 @@ public class Huffman {
 
 <br>
 
-### 事件驱动模拟
+# 事件驱动模拟
 
 <br>
 这是一个非常有趣且逻辑比较简单但功能异常强大的模拟，揭示了一种完全不同于日常java web的计算机应用。
@@ -1259,7 +1259,7 @@ public class CollisionSystem {
 
 <br>
 
-### B-树
+# B树
 
 <br>
 好吧，这个才是今晚的计划与重点，mysql的索引，b+树将我引入到数据结构之中。
@@ -1271,14 +1271,14 @@ public class CollisionSystem {
 20240205-20:43 没看懂后缀数组的情况下，我想暂时就先终结这一部分了。这绝对不是一个很好的句号，但相比于一年前，已有所长进，不过还远远不够。
 <br>
 
-### 后缀数组
+# 后缀数组
 
 <br>
 事实上，我只打算着重于事件驱动模拟&b-树。
 <br>
 
-### 网络流量
+# 网络流量
 
 <br>
 
-### P&NP
+# P&NP
