@@ -1,13 +1,13 @@
 ---
 layout: post
-title: java并发
+title: Java Concurrency
 category: 计算机
 ---
 
 
 java concurrency
 
-大部分内容均整理自 https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
+大部分内容均整理自 [The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html)
 
 <br>
 
