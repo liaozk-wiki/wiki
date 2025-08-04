@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kubernetes初探
+title: Kubernetes Overview
 category: 计算机
 ---
 
