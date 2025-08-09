@@ -60,27 +60,37 @@ title: computer network
 <br>
 
 <br>
+
 网络： 节点+边
 <br>
+
 计算机网络：
 <br>
+
 主机节点，中转节点（路由器，网络层；交换机，链路层，负载均衡设备等）
 <br>
+
 接入网链路（与方有关），骨干链路（与圆有关）
 <br>
+
 互联网：
 <br>
+
 网之网
 <br>
+
 internet
 <br>
+
 节点+链路+协议
 
 
 
 <br>
+
 协议：对等层实体，通信的过程中应该遵循的规范的集合； 包含 格式（语法，语义）+次序+动作
 <br>
+
 PDU:Protocol Data Unit
 
 ![image-20250807105052810](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/image-20250807105052810.png)
@@ -92,22 +102,31 @@ PDU:Protocol Data Unit
 <br>
 服务角度：分布式进程+提供通信服务的基础设施 （面向连接的服务，无连接的服务）
 <br>
+
 边缘+核心+接入系统
 <br>
+
 边缘 通过核心 连接另一个边缘；核心（一个大的开关）
 <br>
+
 网络边缘：
 <br>
+
 主机
 <br>
+
 c/s 模式
 <br>
+
 peer to peer
 <br>
+
 面向端系统的连接： 端与端知道连接，中间节点不知道tcp ；
 <br>
+
 中间节点也知道的连接：you？ 连接 
 <br>
+
 tcp：可靠，流量控制，阻塞控制
 
 
