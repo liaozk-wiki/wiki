@@ -71,7 +71,7 @@ entries:
             url: man_complete/cs61b/cs61b
       - title: computer network
         entries:
-          - title: 计算机网络
+          - title: computer network
             url: man_complete/computernet/computer_network
             
   #- title: PRO TIP
