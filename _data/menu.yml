@@ -10,7 +10,7 @@ entries:
 
   - title: 全部内容
     post_list:
-      limit: 3
+      limit: 5
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
@@ -69,6 +69,10 @@ entries:
         entries:
           - title: cs61b
             url: man_complete/cs61b/cs61b
+      - title: computer network
+        entries:
+          - title: 计算机网络
+            url: man_complete/computernet/computer_network
             
   #- title: PRO TIP
     #entries:
