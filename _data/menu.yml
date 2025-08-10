@@ -73,6 +73,10 @@ entries:
         entries:
           - title: computer network
             url: man_complete/computernet/computer_network
+      - title: database
+        entries:
+          - title: database
+            url: man_complete/database/database
             
   #- title: PRO TIP
     #entries:

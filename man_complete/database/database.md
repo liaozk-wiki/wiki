@@ -5,6 +5,12 @@ category: 计算机
 ---
 
 # 数据库的整体概览
+![存储-数据库](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E5%AD%98%E5%82%A8-%E6%95%B0%E6%8D%AE%E5%BA%93.jpg)
+
+
+
+
+
 <br>
 数据：符号记录
 <br>
@@ -284,7 +290,20 @@ aries协议：略
 ## 关系型数据库的基本构建
 <br>
 
-## 以mysql为例对关系型数据库的深入理解
+# 关系型数据库-Mysql
+
+![geektimemysql](https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/geektimemysql.png)
+
+
+
+
+
+
+
+
+
+
+
 一般sql的逻辑执行顺序：
 
 ```sql
@@ -949,7 +968,13 @@ D 不保证，rdb/aof都是异步
 ## 主从复制-Redis Sentinel
 
 <br>
-https://pdai.tech/images/db/redis/db-redis-sen-1.png
+
+
+
+<img src="https://pdai.tech/images/db/redis/db-redis-sen-1.png" alt="主从复制" style="zoom:50%;" />
+
+
+
 <br>
 
 - Sentinel 集群组件
@@ -1048,10 +1073,7 @@ https://pdai.tech/images/db/redis/db-redis-sen-1.png
 
 ### 6.一致性
 
-<br>
-太难
-<br>
-https://pdai.tech/md/db/nosql-redis/db-redis-x-cache.html
+<br>[todo..](https://pdai.tech/md/db/nosql-redis/db-redis-x-cache.html)
 <br>
 
 ## 运维监控
