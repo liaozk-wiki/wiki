@@ -304,7 +304,7 @@ aries协议：略
 
 
 
-一般sql的逻辑执行顺序：
+## 逻辑执行顺序
 
 ```sql
 1. FROM / JOIN        → 先确定数据源（包括 JOIN）
@@ -327,7 +327,7 @@ aries协议：略
 
 
 
-### 一条查询语句的流程
+## 一条查询语句的流程
 
 
 
@@ -346,7 +346,7 @@ aries协议：略
 net buffer 大小由net_buffer_length 定义，同时因为是边读边发，所以网络也会影响事务的执行时间。sending to client 表示netbuffer 满了，等待客户端接受；sending data则是表示语句正在执行。
 <br>
 
-### 一条更新语句的流程
+## 一条更新语句的流程
 
 <img src="https://cdn.jsdelivr.net/gh/liaozk-wiki/md_img/md/%E6%9B%B4%E6%96%B0%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" alt="更新语句执行过程" style="zoom:33%;" />
 
@@ -452,7 +452,7 @@ innodb_io_capacity：告诉mysql 磁盘能力
 
 
 
-### 索引
+## 索引
 
 对于mysql而言，关系是以b+树形式组织的；索引可以理解为依赖于这个关系的另外一张b+树结构组织的关系。只不过其叶子节点保存的是主键id；因为其是b+树所以查找的时间复杂度只有O(log(N）因为其叶子节点只存有id，所以空间相对较小。alert table t engine=innodb，可以整理表。
 <br>
@@ -526,7 +526,7 @@ alter table add index i_emali(email(6));
 
 <br>
 
-### 排序的原理
+## 排序的原理
 Using filesort  mysql会给每个线程分配一块儿 sort buffer（sort_buffer_size），所需要排序的数据大于 filesort buffer 排序会借助磁盘（大量数据排序会因为磁盘IO减慢速度）
 
 <br>
@@ -541,7 +541,7 @@ Using filesort  mysql会给每个线程分配一块儿 sort buffer（sort_buffer
 如果不能走索引（索引天然有序），一旦数据量大，排序将会非常耗时；订单系统中很多页面的查询，会依据createtime排序，随着数据量的增加后续越来越慢，此时一般可以用主键id替换。
 <br>
 
-### join的原理
+## join的原理
 <br>
 其实对于关系型数据库而言，join本就是其一大特色，如果能走索引，可以多关联几张表。
 
@@ -566,7 +566,7 @@ set optimizer_switch='mrr=on,mrr_cost_based=off,batched_key_access=on';
 在inj算法中使用join buffer 就是bka算法，不是一条一条去被驱动表索引找，而是一次在内存中读n条，然后去匹配。
 <br>
 
-### 事务-锁与mvcc
+## 事务-锁与mvcc
 <br>
 关于隔离级别的相关信息此处不再过多介绍，mysql 并发控制的实现是采用了，锁+mvcc
 <br>
@@ -634,12 +634,12 @@ Mysql的行级别锁：
 
 <br>
 
-### 主备一致性
+## 主备一致性
 <br>
 
 
 
-### Mysql 其他特性
+## Mysql 其他特性
 <br>
 表空间回收：
 <br>
@@ -1078,7 +1078,7 @@ D 不保证，rdb/aof都是异步
 
 ## 运维监控
 
-<br>
+Todo..
 
 
 
@@ -1091,3 +1091,5 @@ D 不保证，rdb/aof都是异步
 
 
 # 大数据，数据仓储
+
+Todo..
