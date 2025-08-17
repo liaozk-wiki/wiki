@@ -17,12 +17,14 @@ entries:
 
   - title: 分类
     entries:
-      - title: Reading Notes‌..
+      - title: Reading Notes‌
         url: category/Reading
-      - title: Random Thoughts‌..
+      - title: Random Thoughts‌
         url: category/Thoughts
-      - title: About Computer...
+      - title: About Computer
         url: category/Computer
+      - title: Bug Record
+        url: category/BugRecord
 
   #- title: rss
     #url: feed.xml
