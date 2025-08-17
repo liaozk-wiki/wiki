@@ -31,7 +31,7 @@ entries:
   
   - title: 人类补全计划
     entries:
-      - title: os
+      - title: jyy-os
         entries:
           - title: 实验记录
             url: man_complete/os/操作系统_实验记录
