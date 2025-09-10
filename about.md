@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Sharing a song with everyone. For any matters, can contact me at zikai.liao@outlook.com.
+Sharing a song with everyone. For any matters, can contact me: zikai.liao@outlook.com
 
 
 <iframe 
