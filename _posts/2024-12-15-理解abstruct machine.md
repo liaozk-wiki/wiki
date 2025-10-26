@@ -21,6 +21,26 @@ https://jyywiki.cn/OS/AbstractMachine/AM_Programs.html
 <br>
 
 加载运行：execve 将代码加载到进程的特定地址空间后，将pc指针指向程序运行处
+
+
+makefile 工具
+<br>
+
+```shell
+make -nB | grep -v '^mkdir' | vim -
+```
+
+<br>
+
+```vim
+:%s/^/\r
+:%s/ /\r /g 
+%s/learn\/os\/os-workbench-2022\/LAB/pwd /g
+:w newfile.txt
+<br>
+:set nu
+```
+
 <br>
 
 
