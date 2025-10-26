@@ -37,7 +37,6 @@ make -nB | grep -v '^mkdir' | vim -
 :%s/ /\r /g 
 %s/learn\/os\/os-workbench-2022\/LAB/pwd /g
 :w newfile.txt
-<br>
 :set nu
 ```
 
